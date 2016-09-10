@@ -1,0 +1,12 @@
+<div class="header container search-container">
+    <div class="row search-bar">
+        <div class="col-xs-12">
+                <input type="text" class="city-search form-control" placeholder="Search for city or coordinates...." ng-model="searchKey" ng-change="getCity()">
+        </div>
+    </div>
+    <ul class="city-search-results row">
+        <li ng-repeat="result in searchResults" class="col-xs-12">
+            <a ui-sref="condensed({lat: result.coordinates.lat, lng: result.coordinates.lng})">{{result.adddress}}</a>
+        </li>
+    </ul>
+</div>

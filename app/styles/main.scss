@@ -1,0 +1,18 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+// bower:scss
+@import 'bootstrap-sass-official/assets/stylesheets/_bootstrap.scss';
+// endbower
+
+* {
+    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+body {
+  padding-top: 3rem;
+  background-color: #000;
+}
+
+@import 'condensed.scss';
+@import 'home.scss';
+@import 'search.scss';
+

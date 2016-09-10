@@ -1,0 +1,47 @@
+.weather-card {
+    box-shadow: 0px 0px 25px 0px rgba(255, 255, 255, 0.15);
+    margin-top: 10px;
+    .city-name {
+        text-align: right;
+        padding: 10px;
+        background-color: #333;
+        color: white;
+    }
+    .country-name {
+        font-weight: 600;
+        padding: 10px;
+        background-color: rgba(255, 255, 255, 0.15);
+        color: white;
+    }
+    .hour-list {
+        list-style: none;
+        background-color: white;
+        li {
+            margin: 1rem;
+            border: 2px solid black;
+            span {
+                border: 5px solid white;
+                height: 100px;
+                text-align: center;
+                background-color: #EEEEEE;
+                &.weather-main,
+                &.weather-icon {
+                    line-height: 100px;
+                    font-weight: 600;
+                    background-color: black;
+                    color: white;
+                }
+                div.title {
+                    height: 30px;
+                    line-height: 30px;
+                    background-color: black;
+                    color: white;
+                }
+                div {
+                    height: 70px;
+                    line-height: 70px;
+                }
+            }
+        }
+    }
+}

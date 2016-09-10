@@ -1,0 +1,23 @@
+.search-bar {
+  padding: 15px;
+  background-color: #262626;
+  button, input {
+    border-radius: 0px;
+  }
+}
+.search-container {
+  ul {
+    background-color: white;
+    list-style: none;
+    z-index: 99999;
+    padding: 0px 15px;
+    li {
+      border-bottom: 1px solid grey;
+      padding: 15px 15px 15px 15px;
+    }
+    li:last-child {
+      border-bottom: 0px;
+    }
+  }
+
+  }

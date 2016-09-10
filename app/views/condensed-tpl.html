@@ -1,0 +1,47 @@
+<article class="weather-card container">
+    <div class="row">
+        <span class="col-xs-12 location">
+            <div class="row">
+                <h3 class="city-name col-xs-6" ng-bind="condensedWeather.city"></h3>
+
+                <h3 class="country-name col-xs-6" ng-bind="condensedWeather.country"></h3>
+            </div>
+        </span>
+        <select class="hidden filter-date" ng-model="filterDate" ng-options="day.time for day in condensedWeather.list" ng-init="(all) ? filterDate.time = '' : filterDate.time = condensedWeather.list[0]">
+        </select>
+    </div>
+    <div class="row">
+        <ul class="hour-list col-xs-12">
+            <li class="hour row" ng-repeat="hour in condensedWeather.list | filter: filterDate.time">
+
+                <span class="time col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                    <div class="row title" ng-bind="'Time'"></div>
+                    <div class="row" ng-bind="hour.time | date :'EEE HHmm '"></div>
+                </span>
+
+                <span class="temp col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                    <div class="row title" ng-bind="'Temp'"></div>
+                    <div class="row" ng-bind="hour.temp | temp: 'c'"></div>
+                </span>
+
+                <span class="humidity col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                    <div class="row title" ng-bind="'Humidity'"></div>
+                    <div class="row" ng-bind="hour.humidity"></div>
+                </span>
+
+                <span class="weather-icon col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                    <img ng-src="{{hour.weather.icon}}" class="weather-icon-img"/>
+                </span>
+
+                <span class="weather-main col-lg-4 col-md-4 col-sm-4 col-xs-12" ng-bind="hour.weather.main">
+                </span>
+
+                <span class="col-xs-12" ng-show="!all">
+                    <a ui-sref="detailed({lat: lat,lng: lng,all: 'all'})" class="row">
+                        <h4 ng-bind="'Full forecast'" class="col-xs-12"></h4>
+                    </a>
+                </span>
+            </li>
+        </ul>
+    </div>
+</article>
