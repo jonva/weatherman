@@ -8,7 +8,7 @@
  * Controller of the weatherManApp
  */
 angular.module('weatherManApp')
-  .controller('WeatherCtrl', function($scope, weatherData, all, lat, lng, IconUrl, $stateParams, Search, Weather, $filter) {
+  .controller('WeatherCtrl', ['$scope', 'weatherData', 'all', 'lat', 'lng', 'IconUrl', '$stateParams', 'Search', function WeatherCtrl($scope, weatherData, all, lat, lng, IconUrl, $stateParams, Search) {
     $scope.all = all;
     $scope.lat = lat;
     $scope.lng = lng;
@@ -47,4 +47,4 @@ angular.module('weatherManApp')
     if($stateParams.lat && $stateParams.lng) {
       $scope.condensedWeather = condensedWeather(weatherData.data);
     }
-  });
+  }]);

@@ -8,7 +8,7 @@
  * Factory in the weatherManApp.
  */
 angular.module('weatherManApp')
-  .factory('Weather', function(WeatherApiKey, WeatherApiUrl, $http) {
+  .factory('Weather', ['WeatherApiKey', 'WeatherApiUrl', '$http', function(WeatherApiKey, WeatherApiUrl, $http) {
     var weatherServiceFactory = {
       getWeather: function(coordinates) {
         return $http({
@@ -22,4 +22,4 @@ angular.module('weatherManApp')
       }
     };
     return weatherServiceFactory;
-  });
+  }]);
