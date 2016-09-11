@@ -9,7 +9,7 @@
  * Filter in the weatherManApp.
  */
 angular.module('weatherManApp')
-  .filter('temp', function ($filter) {
+  .filter('temp', ['$filter', function ($filter) {
     return function (input, filterOn) {
       if (angular.isUndefined(filterOn) || filterOn === null || !angular.isNumber(input)) {
         return input;
@@ -33,4 +33,4 @@ angular.module('weatherManApp')
         }
       }
     };
-  });
+  }]);
