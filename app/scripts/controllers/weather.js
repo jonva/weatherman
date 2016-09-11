@@ -12,12 +12,12 @@ angular.module('weatherManApp')
     $scope.all = all;
     $scope.lat = lat;
     $scope.lng = lng;
+
     function urlIze(icon) {
       return IconUrl + icon + '.png';
     }
 
     function condensedWeather(weatherResponse) {
-
       return {
         city: weatherResponse.city.name,
         country: weatherResponse.city.country,
@@ -37,7 +37,7 @@ angular.module('weatherManApp')
 
     $scope.getCity = function() {
       if($scope.searchKey.length > 3) {
-      Search.returnCoordinates($scope, $scope.searchKey);
+        Search.returnCoordinates($scope, $scope.searchKey);
       }
       else {
         return;
